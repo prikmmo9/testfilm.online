@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Главная</title>
+</head>
+<style>
+    button {
+        margin: 10px;
+    }
+</style>
+<body style='background-color:gray; '>
+
+<script src="/bazatest/music1.js"></script>
+
+<script src="/bazafunction/function.js"></script>
+
+<script>
+
+
+
+
+    arrFilm1 = [
+        ff1 = {
+            1: 'twenty one pilots - Chlorine',
+            2: 'https://www.youtube.com/embed/eJnQBXmZ7Ek',
+            3: 1,
+            4: 2013,
+        },
+        ff2 = {
+            1: 'Coldplay - The Scientist',
+            2: 'https://www.youtube.com/embed/RB-RcX5DS5A',
+            3: 2,
+            4: 2012,
+        },
+        ff3 = {
+            1: 'Coldplay - Paradise',
+            2: 'https://www.youtube.com/embed/1G4isv_Fylg',
+            3: 3,
+            4: 2004
+        },
+        ff4 = {
+            1: 'Coldplay - Up&Up',
+            2: 'https://www.youtube.com/embed/BPNTC7uZYrI',
+            3: 4,
+            4: 1994
+        },
+        ff5 = {
+            1: 'Coldplay - Hymn For The Weekend',
+            2: 'https://www.youtube.com/embed/YykjpeuMNEk',
+            3: 5,
+            4: 2013
+        },
+        ff6 = {
+            1: 'twenty one pilots - Nico And The Niners',
+            2: 'https://www.youtube.com/embed/hMAPyGoqQVw',
+            3: 6,
+            4: 2008
+        },
+        ff7 = {
+            1: 'Panic! At The Disco: Emperor\'s New Clothes',
+            2: 'https://www.youtube.com/embed/7qFF2v8VsaA',
+            3: 7,
+            4: 2005
+        },
+        ff8 = {
+            1: 'twenty one pilots: Stressed Out',
+            2: 'https://www.youtube.com/embed/pXRviuL6vMY',
+            3: 8,
+            4: 1999
+        },
+        ff9 = {
+            1: 'Stromae - Tous Les Mêmes',
+            2: 'https://www.youtube.com/embed/CAMWdvo71ls',
+            3: 9,
+            4: 1973
+        },
+        ff10 = {
+            1: 'Coldplay - Adventure Of A Lifetime',
+            2: 'https://www.youtube.com/embed/QtXby3twMmI',
+            3: 10,
+            4: 2007
+        },
+        ff11 = {
+            1: 'Gotye - Somebody That I Used To Know',
+            2: 'https://www.youtube.com/embed/8UVNT4wvIGY',
+            3: 11,
+            4: 2001
+        },
+        ff12 = {
+            1: 'Oliver Tree - Cowboys Don\'t Cry',
+            2: 'https://www.youtube.com/embed/UEoU6VbHs2c',
+            3: 12,
+            4: 2005
+        },
+        ff13 = {
+            1: 'The Strumbellas - Spirits',
+            2: 'https://www.youtube.com/embed/F9kXstb9FF4',
+            3: 13,
+            4: 2011
+        },
+        ff14 = {
+            1: 'The Vaccines - Teenage Icon',
+            2: 'https://www.youtube.com/embed/bFUKrsDDChE',
+            3: 14,
+            4: 2004
+        },
+        ff15 = {
+            1: 'Imagine Dragons – Enemy',
+            2: 'https://www.youtube.com/embed/F5tSoaJ93ac',
+            3: 15,
+            4: 2021
+        },
+        ff16 = {
+            1: 'Gorillaz - Feel Good Inc.',
+            2: 'https://www.youtube.com/embed/HyHNuVaZJ-k',
+            3: 16,
+            4: 2011
+        },
+        ff17 = {
+            1: 'Post Malone, Swae Lee - Sunflower',
+            2: 'https://www.youtube.com/embed/ApXoWvfEYVU',
+            3: 17,
+            4: 1979
+        },
+        ff18 = {
+            1: 'Post Malone - Circles',
+            2: 'https://www.youtube.com/embed/wXhTHyIgQ_U',
+            3: 18,
+            4: 2010
+        },
+        ff19 = {
+            1: 'Post Malone ft. 21 Savage - rockstar',
+            2: 'https://www.youtube.com/embed/UceaB4D0jpo',
+            3: 19,
+            4: 2018
+        },
+        ff20 = {
+            1: 'Avicii - Wake Me Up',
+            2: 'https://www.youtube.com/embed/IcrbM1l_BoI',
+            3: 20,
+            4: 1999
+        },
+        ff21 = {
+            1: 'Billie Eilish - all the good girls go to hell',
+            2: 'https://www.youtube.com/embed/-PZsSWwc9xA',
+            3: 21,
+            4: 2010
+        },
+        ff22 = {
+            1: 'Good Charlotte - I Just Wanna Live',
+            2: 'https://www.youtube.com/embed/rISYCquFeI8',
+            3: 22,
+            4: 2014
+        },
+        ff23 = {
+            1: 'Amy Winehouse - Back To Black',
+            2: 'https://www.youtube.com/embed/TJAfLE39ZZ8',
+            3: 23,
+            4: 2018
+        },
+        ff24 = {
+            1: 'Sia - Elastic Heart feat. Shia LaBeouf & Maddie Ziegler',
+            2: 'https://www.youtube.com/embed/KWZGAExj-es',
+            3: 24,
+            4: 1998
+        },
+        ff25 = {
+            1: 'Joji - SLOW DANCING IN THE DARK',
+            2: 'https://www.youtube.com/embed/K3Qzzggn--s',
+            3: 25,
+            4: 2004
+        },
+        ff26 = {
+            1: 'joji - will he',
+            2: 'https://www.youtube.com/embed/R2zXxQHBpd8',
+            3: 26,
+            4: 1994
+        },
+        ff17 = {
+            1: 'Joji - YEAH RIGHT',
+            2: 'https://www.youtube.com/embed/tG7wLK4aAOE',
+            3: 27,
+            4: 2002
+        },
+        ff18 = {
+            1: 'Machine Gun Kelly - Bloody Valentine',
+            2: 'https://www.youtube.com/embed/wSdT-SArM2Q',
+            3: 28,
+            4: 1997
+        },
+        ff19 = {
+            1: 'Eminem - Not Afraid',
+            2: 'https://www.youtube.com/embed/j5-yKhDd64s',
+            3: 29,
+            4: 2019
+        },
+        ff20 = {
+            1: 'Katy Perry - Dark Horse',
+            2: 'https://www.youtube.com/embed/0KSOMA3QBU0',
+            3: 30,
+            4: 2009
+        },
+        ff21 = {
+            1: 'OneRepublic - Counting Stars',
+            2: 'https://www.youtube.com/embed/hT_nvWreIhg',
+            3: 31,
+            4: 2014
+        },
+        ff22 = {
+            1: 'Imagine Dragons - Radioactive',
+            2: 'https://www.youtube.com/embed/ktvTqknDobU',
+            3: 32,
+            4: 2007
+        },
+        ff23 = {
+            1: 'David Guetta - Titanium ft. Sia',
+            2: 'https://www.youtube.com/embed/JRfuAukYTKg',
+            3: 33,
+            4: 2007
+        },
+        ff24 = {
+            1: 'David Guetta - She Wolf (Falling To Pieces) ft. Sia',
+            2: 'https://www.youtube.com/embed/PVzljDmoPVs',
+            3: 34,
+            4: 1997
+        },
+        ff25 = {
+            1: 'One Direction - Drag Me Down',
+            2: 'https://www.youtube.com/embed/Jwgf3wmiA04',
+            3: 35,
+            4: 2016
+        },
+        ff26 = {
+            1: 'Adele - Rolling in the Deep',
+            2: 'https://www.youtube.com/embed/rYEDA3JcQqw',
+            3: 36,
+            4: 2018
+        },
+        ff17 = {
+            1: 'Capital Cities - Safe And Sound',
+            2: 'https://www.youtube.com/embed/47dtFZ8CFo8',
+            3: 37,
+            4: 2015
+        },
+        ff18 = {
+            1: 'Carly Rae Jepsen - Call Me Maybe',
+            2: 'https://www.youtube.com/embed/fWNaR-rxAic',
+            3: 38,
+            4: 2018
+        },
+        ff19 = {
+            1: 'Miley Cyrus - Wrecking Ball',
+            2: 'https://www.youtube.com/embed/-YICuUtkjlg',
+            3: 39,
+            4: 2019
+        },
+        ff20 = {
+            1: 'Maroon 5 - Moves Like Jagger ft. Christina Aguilera',
+            2: 'https://www.youtube.com/embed/iEPTlhBmwRg',
+            3: 40,
+            4: 1999
+        },
+        ff21 = {
+            1: 'Lil Nas X, Jack Harlow - INDUSTRY BABY',
+            2: 'https://www.youtube.com/embed/UTHLKHL_whs',
+            3: 41,
+            4: 2001
+        },
+        ff22 = {
+            1: 'Passenger | Let Her Go',
+            2: 'https://www.youtube.com/embed/RBumgq5yVrA',
+            3: 42,
+            4: 2012
+        },
+        ff23 = {
+            1: 'twenty one pilots: Heathens',
+            2: 'https://www.youtube.com/embed/UprcpdwuwCg',
+            3: 43,
+            4: 2020
+        },
+        ff24 = {
+            1: 'Lil Nas X - MONTERO',
+            2: 'https://www.youtube.com/embed/6swmTBVI83k',
+            3: 44,
+            4: 2017
+        },
+        ff25 = {
+            1: 'Indila - Dernière Danse',
+            2: 'https://www.youtube.com/embed/K5KAc5CoCuk',
+            3: 45,
+            4: 2011
+        },
+        ff26 = {
+            1: 'Ed Sheeran - Shape of You',
+            2: 'https://www.youtube.com/embed/JGwWNGJdvx8',
+            3: 46,
+            4: 2014
+        },
+        ff17 = {
+            1: 'Eva Simons - Bludfire',
+            2: 'https://www.youtube.com/embed/VZ3FcKoF-W4',
+            3: 47,
+            4: 2016
+        },
+        ff18 = {
+            1: 'KALEO - Way Down We Go',
+            2: 'https://www.youtube.com/embed/0-7IHOXkiV8',
+            3: 48,
+            4: 2006
+        },
+        ff19 = {
+            1: 'Rag\'n\'Bone Man - Human',
+            2: 'https://www.youtube.com/embed/L3wKzyIN1yk',
+            3: 49,
+            4: 2018
+        },
+        ff20 = {
+            1: 'Clean Bandit - Rockabye (feat. Sean Paul & Anne-Marie)',
+            2: 'https://www.youtube.com/embed/papuvlVeZg8',
+            3: 50,
+            4: 2014
+        },
+        ff21 = {
+            1: 'Nickelback - How You Remind Me',
+            2: 'https://www.youtube.com/embed/1cQh1ccqu8M',
+            3: 51,
+            4: 2016
+        },
+        ff22 = {
+            1: 'Avril Lavigne - Sk8er Boi',
+            2: 'https://www.youtube.com/embed/TIy3n2b7V9k',
+            3: 52,
+            4: 2017
+        },
+        ff23 = {
+            1: 'Linkin Park - What I\'ve Done',
+            2: 'https://www.youtube.com/embed/8sgycukafqQ',
+            3: 53,
+            4: 2019
+        },
+        ff24 = {
+            1: 'Imagine Dragons - Believer',
+            2: 'https://www.youtube.com/embed/7wtfhZwyrcc',
+            3: 54,
+            4: 1940
+        },
+        ff25 = {
+            1: 'Bruno Mars - Grenade',
+            2: 'https://www.youtube.com/embed/SR6iYWJxHqs',
+            3: 55,
+            4: 2010
+        },
+        ff26 = {
+            1: 'Imagine Dragons - Thunder',
+            2: 'https://www.youtube.com/embed/fKopy74weus',
+            3: 56,
+            4: 2015
+        },
+        ff17 = {
+            1: 'Lady Gaga - Bad Romance',
+            2: 'https://www.youtube.com/embed/qrO4YZeyl0I',
+            3: 57,
+            4: 2011
+        },
+        ff18 = {
+            1: 'Imagine Dragons - Demons',
+            2: 'https://www.youtube.com/embed/mWRsgZuwf_8',
+            3: 58,
+            4: 2017
+        },
+        ff19 = {
+            1: 'Warriors (ft. Imagine Dragons) | Worlds 2014 - League of Legends',
+            2: 'https://www.youtube.com/embed/fmI_Ndrxy14',
+            3: 59,
+            4: 1989
+        },
+        ff20 = {
+            1: 'Thirty Seconds To Mars - This Is War',
+            2: 'https://www.youtube.com/embed/Zcps2fJKuAI',
+            3: 60,
+            4: 1976
+        },
+        ff21 = {
+            1: 'Skillet - Monster',
+            2: 'https://www.youtube.com/embed/1mjlM_RnsVE',
+            3: 61,
+            4: 2012
+        },
+        ff22 = {
+            1: 'The Neighbourhood - Sweater Weather',
+            2: 'https://www.youtube.com/embed/GCdwKhTtNNw',
+            3: 62,
+            4: 2015
+        },
+        ff23 = {
+            1: 'Lana Del Rey - Summertime Sadness',
+            2: 'https://www.youtube.com/embed/TdrL3QxjyVw',
+            3: 63,
+            4: 2017
+        },
+        ff24 = {
+            1: 'Maroon 5 - Sugar',
+            2: 'https://www.youtube.com/embed/09R8_2nJtjg',
+            3: 64,
+            4: 1998
+        },
+
+
+
+
+    ]
+
+
+
+    arrFilm1 = arrFilm1.sort(() => Math.random() - 0.5)
+    console.log(arrFilm1)
+    console.log(arrFilm2)
+    showButton('buttonVib1(0, arrFilm2, arrFilm1)', 'buttonVib1(1, arrFilm2, arrFilm1)')
+
+    let br111 = document.createElement('br');
+    document.body.append(br111);
+
+    showYou(arrFilm1, 0)
+    showYou(arrFilm1, 1)
+
+
+
+
+
+    function buttonVib1(keyFilm, arrFilmAdd, arrFilmShift) {
+
+
+        arrFilmAdd.push(arrFilmShift[keyFilm])
+
+        arrFilmShift.shift()
+        arrFilmShift.shift()
+
+        console.log(arrFilmAdd)
+
+
+        countElementsArr = arrFilmAdd.length;
+        countElementsArr2 = arrFilmShift.length;
+        console.log(countElementsArr)
+        console.log(countElementsArr2)
+
+
+        if ((countElementsArr == 512||countElementsArr == 128||countElementsArr == 32||countElementsArr == 8||countElementsArr == 2) && countElementsArr2 == 0) {
+
+            funkButton(arr1, arr2)
+
+            buf(arrFilmAdd, arrFilmShift, funkButton1, funkButton2)
+
+        } else if ((countElementsArr == 256||countElementsArr == 64||countElementsArr == 4) && countElementsArr2 == 0) {
+
+            funkButton(arr2, arr1)
+
+            buf(arrFilmAdd, arrFilmShift, funkButton1, funkButton2)
+
+        } else if (countElementsArr == 16 && countElementsArr2 == 0) {
+
+
+            funkButton(arr2, arr1)
+
+            buf(arrFilmAdd, arrFilmShift, funkButton1, funkButton2)
+
+
+    }else if (countElementsArr == 1 && countElementsArr2 === 0) {
+
+            alert('Победил ' + arrFilmAdd[0][1])
+
+        } else {
+
+            show2(arrFilmAdd, arrFilmShift)
+
+
+
+        }
+    }
+
+    function buf(arrFilmAdd, arrFilmShift, funkButton1, funkButton2) {
+
+        arrFilmShift = arrFilmAdd.sort(() => Math.random() - 0.5)
+        arrFilmAdd = [];
+
+
+        deliteButton()
+        showButton(funkButton1, funkButton2)
+        show2(arrFilmAdd, arrFilmShift)
+
+    }
+
+    function show2(arrFilmAdd, arrFilmShift) {
+
+
+
+        deliteYouTube()
+        deliteYouTube()
+        showYou(arrFilmShift, 0)
+        showYou(arrFilmShift, 1)
+    }
+
+
+
+
+</script>
+
+<br>
+
+
+
+
+</body>
+</html>

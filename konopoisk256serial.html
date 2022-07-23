@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <title>Главная</title>
+</head>
+<body style='background-color:gray;'>
+
+<script src="/bazatest/serialkp.js"></script>
+
+<script src="/bazafunction/function.js"></script>
+
+<script>
+
+    let arr;
+    let onclock
+    let onc = 0;
+    let arrTop = [];
+
+    let div6;
+    let kkkk;
+    function topTest() {
+
+
+        for (var kkk = 0; kkk < 30; kkk++) {
+
+            kkkk = kkk+1;
+
+            div = document.createElement('div');
+            div.className = "alert";
+            div.setAttribute("style", "display: inline-block; text-align: center; ");
+            div.innerHTML = `<div style="margin: 13px;"><strong>` + kkkk + `) ` + arrTop[kkk][1] + `</strong> (` + arrTop[kkk][4] + `)</div><img src="img/serialkinopoisk/`+ arrTop[kkk][3] +`.jpg" width="450" class="alert2"><br>`;
+            document.body.append(div);
+        }
+
+
+
+
+    }
+
+    function topTestFinal() {
+
+        var removed1;
+
+        for (var x = 0; x < 6; x++){
+
+            for (var i = 0; i < 60; i++) {
+
+
+                for (var n = 0; n < 60; n++) {
+
+                    if ((arrTop[n] == arrTop[i]) && i > n) {
+                        removed1 = arrTop.splice(i, 1);
+                        console.log(arrTop);
+                        console.log(removed1);
+                    }
+                }
+            }
+
+        }
+
+
+
+        console.log(arrTop);
+
+    }
+
+    function showImg(arrFilm, i, onc) {
+
+
+            if (onc == 0){
+
+                onclock = `buttonVib1(` + i + `, arrFilm2, arrFilm1)`;
+
+            }else{
+                onclock = `buttonVib1(` + i + `, arrFilm1, arrFilm2)`;
+
+            }
+
+
+
+
+            div = document.createElement('div');
+            div.className = "alert";
+            div.setAttribute("style", "display: inline-block; text-align: center; ");
+            div.innerHTML = `<div style="margin: 13px;"><strong>` + arrFilm[i][1] + `</strong> (` + arrFilm[i][4] + `)</div>`+ `<img src="img/serialkinopoisk/`+ arrFilm[i][3] +`.jpg" onclick="` + onclock + `" width="450" class="alert2">`;
+
+            document.body.append(div);
+
+     
+
+
+    }
+
+    function removeFunc() {
+
+        let element = document.querySelector('div.alert');
+        element.remove();
+
+        let element2 = document.querySelector('div.alert');
+        element2.remove();
+
+    }
+
+
+
+
+
+    arrFilm1 = arrFilm1.sort(() => Math.random() - 0.5)
+    console.log(arrFilm1)
+    console.log(arrFilm2)
+
+    showImg(arrFilm1, 0, onc)
+    showImg(arrFilm1, 1, onc)
+
+
+    function buttonVib1(keyFilm, arrFilmAdd, arrFilmShift) {
+
+
+
+
+        arrFilmAdd.push(arrFilmShift[keyFilm])
+
+        if (countElementsArr < 100 && countElementsArr2 < 100){
+
+            arrTop.push(arrFilmShift[keyFilm])
+
+
+
+        }
+
+        console.log(arrTop)
+
+
+        arrFilmShift.shift()
+        arrFilmShift.shift()
+
+        console.log(arrFilmAdd)
+
+
+        countElementsArr = arrFilmAdd.length;
+        countElementsArr2 = arrFilmShift.length;
+        console.log(countElementsArr)
+        console.log(countElementsArr2)
+
+
+        if ((countElementsArr == 512||countElementsArr == 128||countElementsArr == 32||countElementsArr == 8||countElementsArr == 2) && countElementsArr2 == 0) {
+
+
+            onc = 1;
+
+            buf(arrFilmAdd, arrFilmShift)
+
+        } else if ((countElementsArr == 256||countElementsArr == 64||countElementsArr == 4) && countElementsArr2 == 0) {
+
+            onc = 0;
+
+
+            buf(arrFilmAdd, arrFilmShift)
+
+        } else if (countElementsArr == 16 && countElementsArr2 == 0) {
+
+
+
+
+            onc = 0;
+
+            buf(arrFilmAdd, arrFilmShift)
+
+
+        }  else if (countElementsArr == 1 && countElementsArr2 === 0) {
+
+            console.log(arrTop)
+            arrTop.reverse();
+            console.log(arrTop)
+
+            topTestFinal()
+
+            alert('Победил ' + arrFilmAdd[0][1])
+
+            removeFunc()
+            topTest()
+
+
+
+        } else {
+
+            show2(arrFilmAdd, arrFilmShift)
+
+        }
+    }
+
+    function buf(arrFilmAdd, arrFilmShift) {
+
+
+        arrFilmShift = arrFilmAdd.sort(() => Math.random() - 0.5)
+        arrFilmAdd = [];
+
+        console.log(arrFilmAdd)
+        console.log(arrFilmShift)
+
+
+        show2(arrFilmAdd, arrFilmShift)
+
+    }
+
+    function show2(arrFilmAdd, arrFilmShift) {
+
+        removeFunc()
+        showImg(arrFilmShift, 0, onc)
+        showImg(arrFilmShift, 1, onc)
+    }
+
+
+
+
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

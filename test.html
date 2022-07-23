@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+
+    let input = document.querySelector('input.place_for_search');
+console.log(input.value);
+
+
+</script>
+
+<form>
+    <input class="place_for_search" type="text" id="text-to-find" value="" placeholder="Search" autofocus>
+    <input class="button_for_search" type="submit" onclick="javascript: FindOnPage('text-to-find',true); return false;" value="Поиск" title="Начать поиск">
+</form>
+
+</body>
+</html>
+
+
+
+divNameFilm1 = document.createElement('div');
+divNameFilm1.className = "alert";
+divNameFilm1.innerHTML = arrFilm[i][1] + ' (' + arrFilm[i][4] + ')';
+//document.body.append(divNameFilm1);
+
+imgFilm1 = document.createElement("IMG");
+imgFilm1.setAttribute("src", 'img/serialkinopoisk/' + arrFilm[i][3] + '.jpg');
+imgFilm1.setAttribute("width", "350");
+imgFilm1.setAttribute("name", "img1");
+imgFilm1.className = "alert";
+//document.body.append(imgFilm1);
+
+
+
+let points = arrFilm[i][3];
+document.querySelector('img[name=img2]').addEventListener('click', function() {
+window.open('list.html?'+points, '_blank');
+})
+
+
+
+
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Главная</title>
+</head>
+<body style='background-color:gray;'>
+
+<script src="/bazatest/filmkp.js"></script>
+
+<script src="/bazafunction/function.js"></script>
+
+<script>
+
+    function showImg(arrFilm, i) {
+
+        divNameFilm1 = document.createElement('div');
+        divNameFilm1.className = "alert";
+        divNameFilm1.innerHTML = arrFilm[i][1] + ' (' + arrFilm[i][4] + ')';
+        document.body.append(divNameFilm1);
+
+        imgFilm1 = document.createElement("IMG");
+        imgFilm1.setAttribute("src", 'img/filmkinopoisk/' + arrFilm[i][3] + '.jpg');
+        imgFilm1.setAttribute("width", "350");
+        imgFilm1.className = "alert";
+        document.body.append(imgFilm1);
+
+
+
+    }

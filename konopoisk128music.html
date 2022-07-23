@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Главная</title>
+</head>
+<style>
+    button {
+        margin: 10px;
+    }
+</style>
+<body style='background-color:gray;'>
+
+<script src="/bazatest/music1.js"></script>
+
+<script src="/bazafunction/function.js"></script>
+
+<script>
+
+
+
+
+    arrFilm1 = [
+        ff1 = {
+            1: 'Мурат Насыров – Мальчик хочет в Тамбов',
+            2: 'https://www.youtube.com/embed/i853cmySVq0?start=13',
+            3: 1,
+            4: 2013,
+        },
+        ff2 = {
+            1: 'Иванушки Int. - Тополиный пух',
+            2: 'https://www.youtube.com/embed/lvCErYl62Zs?start=44',
+            3: 2,
+            4: 2012,
+        },
+        ff3 = {
+            1: 'Михаил Шуфутинский - 3 сентября',
+            2: 'https://www.youtube.com/embed/IwHNiLYy3M8?start=85',
+            3: 3,
+            4: 2004
+        },
+        ff4 = {
+            1: 'Айдамир Мугу - Черные глаза',
+            2: 'https://www.youtube.com/embed/4-DRyntwBz0?start=45',
+            3: 4,
+            4: 1994
+        },
+        ff5 = {
+            1: 'Агата Кристи - Как на войне',
+            2: 'https://www.youtube.com/embed/1fm1XCJAY0s?start=70',
+            3: 5,
+            4: 2013
+        },
+        ff6 = {
+            1: 'ВИА Гра - Попытка №5',
+            2: 'https://www.youtube.com/embed/0fmOMnjHGuA?start=48',
+            3: 6,
+            4: 2008
+        },
+        ff7 = {
+            1: 'STIGMATA - СЕНТЯБРЬ',
+            2: 'https://www.youtube.com/embed/EziHx_07vX0?start=64',
+            3: 7,
+            4: 2005
+        },
+        ff8 = {
+            1: 'Валерий Меладзе - Небеса',
+            2: 'https://www.youtube.com/embed/mHTx0mhRFws?start=26',
+            3: 8,
+            4: 1999
+        },
+        ff9 = {
+            1: 'Ария - Я свободен',
+            2: 'https://www.youtube.com/embed/_91mQPe-7-o?start=134',
+            3: 9,
+            4: 1973
+        },
+        ff10 = {
+            1: 'Сплин - Мое сердце',
+            2: 'https://www.youtube.com/embed/yaKTJ1atdEA?start=15',
+            3: 10,
+            4: 2007
+        },
+        ff11 = {
+            1: 'Ласковый май - "Белые розы"',
+            2: 'https://www.youtube.com/embed/LktkNlsGh34?start=100',
+            3: 11,
+            4: 2001
+        },
+        ff12 = {
+            1: 'Григорий Лепс - Рюмка водки на столе',
+            2: 'https://www.youtube.com/embed/42t-NCCbShQ?start=69',
+            3: 12,
+            4: 2005
+        },
+        ff13 = {
+            1: 'СПЛИН - Выхода нет',
+            2: 'https://www.youtube.com/embed/SDTD4pL0mLc?start=44',
+            3: 13,
+            4: 2011
+        },
+        ff14 = {
+            1: 'Би-2 - Варвара',
+            2: 'https://www.youtube.com/embed/T18deTeV0RI?start=47',
+            3: 14,
+            4: 2004
+        },
+        ff15 = {
+            1: 'Валентин Стрыкало - Наше лето',
+            2: 'https://www.youtube.com/embed/VMS30oV8ApE?start=31',
+            3: 15,
+            4: 2021
+        },
+        ff16 = {
+            1: 'Руки Вверх! - 18 мне уже',
+            2: 'https://www.youtube.com/embed/Hxab_Sr132o?start=11',
+            3: 16,
+            4: 2011
+        },
+        ff17 = {
+            1: 'Lumen - Гореть',
+            2: 'https://www.youtube.com/embed/dwHhyfZXLU0?start=31',
+            3: 17,
+            4: 1979
+        },
+        ff18 = {
+            1: 'Алла Пугачева - Позови меня с собой',
+            2: 'https://www.youtube.com/embed/DPOO7A_mOKQ?start=26',
+            3: 18,
+            4: 2010
+        },
+        ff19 = {
+            1: 'Звери - До скорой встречи',
+            2: 'https://www.youtube.com/embed/DF6W1XD25Dc?start=88',
+            3: 19,
+            4: 2018
+        },
+        ff20 = {
+            1: 'Форум - Белая ночь',
+            2: 'https://www.youtube.com/embed/XaiWLGTP-7E?start=74',
+            3: 20,
+            4: 1999
+        },
+        ff21 = {
+            1: 'Игорь Николаев - Выпьем за любовь',
+            2: 'https://www.youtube.com/embed/QwPYW8Cra8E?start=62',
+            3: 21,
+            4: 2010
+        },
+        ff22 = {
+            1: 'Технология - Нажми На Кнопку',
+            2: 'https://www.youtube.com/embed/JOWt3y6tq8A?start=57',
+            3: 22,
+            4: 2014
+        },
+        ff23 = {
+            1: 'Ёлка - Прованс',
+            2: 'https://www.youtube.com/embed/U0vduC21YwI?start=57',
+            3: 23,
+            4: 2018
+        },
+        ff24 = {
+            1: 'Татьяна Буланова - Ясный мой свет',
+            2: 'https://www.youtube.com/embed/R8r8BX57RNM?start=55',
+            3: 24,
+            4: 1998
+        },
+        ff25 = {
+            1: 'Animal ДжаZ - Три полоски',
+            2: 'https://www.youtube.com/embed/spDy95Sww6k?start=52',
+            3: 25,
+            4: 2004
+        },
+        ff26 = {
+            1: 'Нервы - Кофе мой друг',
+            2: 'https://www.youtube.com/embed/_tHtpFXcjUA?start=27',
+            3: 26,
+            4: 1994
+        },
+        ff17 = {
+            1: 'Бумбокс - Вахтерам',
+            2: 'https://www.youtube.com/embed/tnZPDs9qepA?start=72',
+            3: 27,
+            4: 2002
+        },
+        ff18 = {
+            1: 't.A.T.u. - Я сошла с ума',
+            2: 'https://www.youtube.com/embed/-F-JfWqMG6g?start=19',
+            3: 28,
+            4: 1997
+        },
+        ff19 = {
+            1: 'Виктор Цой - Звезда По Имени Солнце',
+            2: 'https://www.youtube.com/embed/jQV5VXfKDYc?start=153',
+            3: 29,
+            4: 2019
+        },
+        ff20 = {
+            1: 'Градусы — Голая',
+            2: 'https://www.youtube.com/embed/fou72UMdG0k?start=60',
+            3: 30,
+            4: 2009
+        },
+        ff21 = {
+            1: 'Жуки - Батарейка',
+            2: 'https://www.youtube.com/embed/9IPvUmLCLBM?start=40',
+            3: 31,
+            4: 2014
+        },
+        ff22 = {
+            1: 'Братья Грим - Ресницы',
+            2: 'https://www.youtube.com/embed/ZENCTedP0Ec?start=37',
+            3: 32,
+            4: 2007
+        },
+        ff23 = {
+            1: 'UMA2RMAN - Проститься',
+            2: 'https://www.youtube.com/embed/-8L9AmmtgG8?start=60',
+            3: 33,
+            4: 2007
+        },
+        ff24 = {
+            1: 'Пятница - Я Солдат',
+            2: 'https://www.youtube.com/embed/F1fQFCCMtg4?start=41',
+            3: 34,
+            4: 1997
+        },
+        ff25 = {
+            1: 'Quest Pistols Show - Ты Так Красива',
+            2: 'https://www.youtube.com/embed/mYcl6p3oiCc?start=65',
+            3: 35,
+            4: 2016
+        },
+        ff26 = {
+            1: 'Lumen - Сид и Нэнси',
+            2: 'https://www.youtube.com/embed/F3NUQUSIiMs?start=70',
+            3: 36,
+            4: 2018
+        },
+        ff17 = {
+            1: 'Звери - Районы-кварталы',
+            2: 'https://www.youtube.com/embed/Ezfv3J0jsnY?start=50',
+            3: 37,
+            4: 2015
+        },
+        ff18 = {
+            1: 'Tatu - Нас не догонят',
+            2: 'https://www.youtube.com/embed/BjZ4pN5xqxM?start=80',
+            3: 38,
+            4: 2018
+        },
+        ff19 = {
+            1: 'Серега - Черный бумер',
+            2: 'https://www.youtube.com/embed/xCvD7Rf5i2I?start=70',
+            3: 39,
+            4: 2019
+        },
+        ff20 = {
+            1: 'Ляпис Трубецкой - Ау',
+            2: 'https://www.youtube.com/embed/-1V1oZ3IGPw?start=67',
+            3: 40,
+            4: 1999
+        },
+        ff21 = {
+            1: 'КОРНИ - Ты узнаешь её',
+            2: 'https://www.youtube.com/embed/du-zWWpnZSw?start=74',
+            3: 41,
+            4: 2001
+        },
+        ff22 = {
+            1: 'Земфира — Искала',
+            2: 'https://www.youtube.com/embed/Jn1kng-nFuY?start=40',
+            3: 42,
+            4: 2012
+        },
+        ff23 = {
+            1: 'Дискотека Авария — Новогодняя',
+            2: 'https://www.youtube.com/embed/xviBEvbxgZ0?start=48',
+            3: 43,
+            4: 2020
+        },
+        ff24 = {
+            1: 'UMA2RMAH - Ума Турман',
+            2: 'https://www.youtube.com/embed/JHrKZVosvD0?start=43',
+            3: 44,
+            4: 2017
+        },
+        ff25 = {
+            1: 'Quest Pistols Show - Белая стрекоза любви',
+            2: 'https://www.youtube.com/embed/XhF5fswJ6hY?start=50',
+            3: 45,
+            4: 2011
+        },
+        ff26 = {
+            1: 'Градусы — Режиссер',
+            2: 'https://www.youtube.com/embed/V1MK9244sE8?start=45',
+            3: 46,
+            4: 2014
+        },
+        ff17 = {
+            1: 'Дискотека Авария feat. Жанна Фриске — Малинки',
+            2: 'https://www.youtube.com/embed/dylbA7M3B5Y?start=123',
+            3: 47,
+            4: 2016
+        },
+        ff18 = {
+            1: 'Юрий Шатунов - Седая ночь',
+            2: 'https://www.youtube.com/embed/qlb4ZyJgUZ8?start=53',
+            3: 48,
+            4: 2006
+        },
+        ff19 = {
+            1: 'Альянс - На заре',
+            2: 'https://www.youtube.com/embed/tUBVEKzsZ-k?start=120',
+            3: 49,
+            4: 2018
+        },
+        ff20 = {
+            1: 'Потап и Настя - Не пара',
+            2: 'https://www.youtube.com/embed/N2i0xvcFUZ0?start=48',
+            3: 50,
+            4: 2014
+        },
+        ff21 = {
+            1: 'Братья Грим - Кустурица',
+            2: 'https://www.youtube.com/embed/hLATRbK1MuM?start=25',
+            3: 51,
+            4: 2016
+        },
+        ff22 = {
+            1: 'ЛЕПРИКОНСЫ - Хали-гали, паратрупер',
+            2: 'https://www.youtube.com/embed/rUd2diUWDyI?start=70',
+            3: 52,
+            4: 2017
+        },
+        ff23 = {
+            1: 'ГОРОД 312 - Останусь',
+            2: 'https://www.youtube.com/embed/4tVriTuoll8?start=58',
+            3: 53,
+            4: 2019
+        },
+        ff24 = {
+            1: 'Катя Лель - Мой мармеладный',
+            2: 'https://www.youtube.com/embed/Tn-z95ev64s?start=50',
+            3: 54,
+            4: 1940
+        },
+        ff25 = {
+            1: 'Глюкоза - Невеста',
+            2: 'https://www.youtube.com/embed/9P_wHDW2VJY?start=80',
+            3: 55,
+            4: 2010
+        },
+        ff26 = {
+            1: 'Валерий Меладзе и Виа Гра - Притяженья больше нет',
+            2: 'https://www.youtube.com/embed/Rav-frJx_7w?start=105',
+            3: 56,
+            4: 2015
+        },
+        ff17 = {
+            1: 'МакSим - Знаешь ли ты',
+            2: 'https://www.youtube.com/embed/Q8WJz-DmPVg?start=54',
+            3: 57,
+            4: 2011
+        },
+        ff18 = {
+            1: 'Иванушки Int - Билетик в кино',
+            2: 'https://www.youtube.com/embed/GHOIVp-Jsoc?start=75',
+            3: 58,
+            4: 2017
+        },
+        ff19 = {
+            1: 'БандЭрос - Коламбия Пикчерз не представляет',
+            2: 'https://www.youtube.com/embed/z2AmjZbEWgE?start=74',
+            3: 59,
+            4: 1989
+        },
+        ff20 = {
+            1: 'Звери - Все, что тебя касается',
+            2: 'https://www.youtube.com/embed/llDRNXjUwNc?start=20',
+            3: 60,
+            4: 1976
+        },
+        ff21 = {
+            1: 'Андрей Губин - Девушки, как звёзды',
+            2: 'https://www.youtube.com/embed/8xcx3SdqL8g?start=0',
+            3: 61,
+            4: 2012
+        },
+        ff22 = {
+            1: 'Николай Носков - Это здорово',
+            2: 'https://www.youtube.com/embed/C3LW0F44V80?start=18',
+            3: 62,
+            4: 2015
+        },
+        ff23 = {
+            1: 'Лолита Милявская - пошлю его на...',
+            2: 'https://www.youtube.com/embed/5vHaMJ7emjM?start=35',
+            3: 63,
+            4: 2017
+        },
+        ff24 = {
+            1: 'REFLEX — Non Stop',
+            2: 'https://www.youtube.com/embed/8W6BQlJY0Oc?start=55',
+            3: 64,
+            4: 1998
+        },
+
+
+
+
+    ]
+
+
+
+    arrFilm1 = arrFilm1.sort(() => Math.random() - 0.5)
+    console.log(arrFilm1)
+    console.log(arrFilm2)
+    showButton('buttonVib1(0, arrFilm2, arrFilm1)', 'buttonVib1(1, arrFilm2, arrFilm1)')
+
+    let br111 = document.createElement('br');
+    document.body.append(br111);
+
+    showYou(arrFilm1, 0)
+    showYou(arrFilm1, 1)
+
+let top16 = {
+    a1:0,
+    a2:0,
+    a3:0,
+    a4:0,
+    a5:0,
+    a6:0,
+    a7:0,
+    a8:0,
+    a9:0,
+    a10:0,
+    a11:0,
+    a12:0,
+    a13:0,
+    a14:0,
+    a15:0,
+    a16:0,
+};
+    let t16;
+    let tt16
+
+    function showF16(ttt16) {
+        divNameFilm1 = document.createElement('div');
+        divNameFilm1.className = "alert";
+        divNameFilm1.innerHTML = ttt16;
+        document.body.append(divNameFilm1);
+
+    }
+
+    function buttonVib1(keyFilm, arrFilmAdd, arrFilmShift) {
+
+
+        arrFilmAdd.push(arrFilmShift[keyFilm])
+
+        arrFilmShift.shift()
+        arrFilmShift.shift()
+
+        console.log(arrFilmAdd)
+
+
+        countElementsArr = arrFilmAdd.length;
+        countElementsArr2 = arrFilmShift.length;
+        console.log(countElementsArr)
+        console.log(countElementsArr2)
+
+
+        if ((countElementsArr == 512||countElementsArr == 128||countElementsArr == 32||countElementsArr == 8||countElementsArr == 2) && countElementsArr2 == 0) {
+
+            funkButton(arr1, arr2)
+
+            buf(arrFilmAdd, arrFilmShift, funkButton1, funkButton2)
+
+        } else if ((countElementsArr == 256||countElementsArr == 64||countElementsArr == 4) && countElementsArr2 == 0) {
+
+            funkButton(arr2, arr1)
+
+            buf(arrFilmAdd, arrFilmShift, funkButton1, funkButton2)
+
+        } else if (countElementsArr == 16 && countElementsArr2 == 0) {
+
+           top16.a1 = arrFilm1[1];
+            top16.a2 = arrFilm1[2];
+            top16.a3 = arrFilm1[3];
+            top16.a4 = arrFilm1[4];
+            top16.a5 = arrFilm1[5];
+            top16.a6 = arrFilm1[6];
+            top16.a7 = arrFilm1[7];
+            top16.a8 = arrFilm1[8];
+            top16.a9 = arrFilm1[9];
+            top16.a10 = arrFilm1[10];
+            top16.a11 = arrFilm1[11];
+            top16.a12 = arrFilm1[12];
+            top16.a13 = arrFilm1[13];
+            top16.a14 = arrFilm1[14];
+            top16.a15 = arrFilm1[15];
+            top16.a16 = arrFilm1[16];
+
+            console.log(top16)
+
+            tt16 =  JSON.parse(JSON.stringify(top16))
+
+
+
+            console.log('--------')
+            console.log(tt16.a1[1])
+            console.log('--------')
+
+
+
+
+
+
+
+            funkButton(arr2, arr1)
+
+            buf(arrFilmAdd, arrFilmShift, funkButton1, funkButton2)
+
+
+    }else if (countElementsArr == 1 && countElementsArr2 === 0) {
+
+            t16 = tt16.a1[1];
+            showF16(t16)
+            t16 = tt16.a2[1];
+            showF16(t16)
+            t16 = tt16.a3[1];
+            showF16(t16)
+            t16 = tt16.a4[1];
+            showF16(t16)
+            t16 = tt16.a5[1];
+            showF16(t16)
+            t16 = tt16.a6[1];
+            showF16(t16)
+            t16 = tt16.a7[1];
+            showF16(t16)
+            t16 = tt16.a8[1];
+            showF16(t16)
+            t16 = tt16.a9[1];
+            showF16(t16)
+            t16 = tt16.a10[1];
+            showF16(t16)
+            t16 = tt16.a11[1];
+            showF16(t16)
+            t16 = tt16.a12[1];
+            showF16(t16)
+            t16 = tt16.a13[1];
+            showF16(t16)
+            t16 = tt16.a14[1];
+            showF16(t16)
+            t16 = tt16.a15[1];
+            showF16(t16)
+
+
+            alert('Победил ' + arrFilmAdd[0][1])
+
+        } else {
+
+            show2(arrFilmAdd, arrFilmShift)
+
+
+
+        }
+    }
+
+    function buf(arrFilmAdd, arrFilmShift, funkButton1, funkButton2) {
+
+        arrFilmShift = arrFilmAdd.sort(() => Math.random() - 0.5)
+        arrFilmAdd = [];
+
+
+        deliteButton()
+        showButton(funkButton1, funkButton2)
+        show2(arrFilmAdd, arrFilmShift)
+
+    }
+
+    function show2(arrFilmAdd, arrFilmShift) {
+
+
+
+        deliteYouTube()
+        deliteYouTube()
+        showYou(arrFilmShift, 0)
+        showYou(arrFilmShift, 1)
+    }
+
+
+
+
+</script>
+
+<br>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="/bazatest/serialkp.js"></script>
+
+    <script src="/bazafunction/function.js"></script>
+
+
+    <title>Сериал</title>
+</head>
+
+
+
+<body style='background-color:gray;'>
+
+<script>
+
+let iter;
+let tot;
+
+
+
+let divName;
+
+iter = 0;
+
+    let strGET = window.location.search.replace( '?', '');
+
+    console.log(strGET)
+
+    arrFilm1 = arrFilm1.sort(() => Math.random() - 0.5)
+
+
+while (iter < 1025) {
+
+    if (arrFilm1[iter][3] == strGET) {
+
+        tot = iter;
+        break;
+    }else{iter++;}
+
+    
+}
+
+
+
+console.log(arrFilm1[tot])
+    divNameFilm1 = document.createElement('div');
+    divNameFilm1.className = "alert";
+    divNameFilm1.innerHTML = arrFilm1[tot][1] + ' (' + arrFilm1[tot][4] + ')';
+    document.body.append(divNameFilm1);
+
+imgFilm1 = document.createElement("IMG");
+imgFilm1.setAttribute("src", 'img/serialkinopoisk/' + arrFilm1[tot][3] + '.jpg');
+imgFilm1.setAttribute("width", "350");
+imgFilm1.setAttribute("name", "img2");
+imgFilm1.className = "alert";
+document.body.append(imgFilm1);
+
+function buttonLink(text, funk) {
+
+    let buttonElement1 = document.createElement('button');
+    buttonElement1.setAttribute("onClick", funk);
+    buttonElement1.textContent = text;
+    buttonElement1.className = "alert";
+    document.body.append(buttonElement1);
+    
+
+}
+br3 = document.createElement('br');
+document.body.append(br3);
+buttonLink("Cмотреть в телеграме", 'showLink()')
+
+br4 = document.createElement('br');
+document.body.append(br4);
+
+buttonLink("Выбрать сезон", 'showSeason()')
+
+
+let linkTg = arrFilm1[tot][5];
+function showLink() {
+
+
+
+    window.open(linkTg, '_blank');
+
+}
+
+function showSeason() {
+
+    br1 = document.createElement('br');
+    document.body.append(br1);
+
+    buttonLink("1 сезон", 'showSeries(linkTg)')
+    buttonLink("2 сезон", 'showSeries(linkTg)')
+    buttonLink("3 сезон", 'showSeries(linkTg)')
+
+}
+
+function showSeries(linkTg) {
+
+    br2 = document.createElement('br');
+    document.body.append(br2);
+
+    buttonLink("1 серия", 'showSeriesLink(linkTg)')
+    buttonLink("2 серия", 'showSeriesLink(linkTg)')
+    buttonLink("3 серия", 'showSeriesLink(linkTg)')
+    buttonLink("4 серия", 'showSeriesLink(linkTg)')
+    buttonLink("5 серия", 'showSeriesLink(linkTg)')
+    buttonLink("6 серия", 'showSeriesLink(linkTg)')
+    buttonLink("7 серия", 'showSeriesLink(linkTg)')
+    buttonLink("8 серия", 'showSeriesLink(linkTg)')
+
+}
+
+function showSeriesLink(linkTg) {
+
+    window.open(linkTg, '_blank');
+
+}
+
+function br() {
+
+    br = document.createElement('br');
+    document.body.append(br);
+
+}
+
+
+</script>
+
+
+</div>
+
+</div>
+
+</body>
+</html>
